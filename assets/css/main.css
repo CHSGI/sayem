@@ -2001,7 +2001,8 @@ section,
 
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
+.contact .php-email-form textarea, 
+.contact .php-email-form select {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
@@ -2013,7 +2014,8 @@ section,
 
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
+.contact .php-email-form textarea:focus,
+.contact .php-email-form select:focus {
   border-color: var(--accent-color);
 }
 
@@ -2025,7 +2027,8 @@ section,
 
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
+.contact .php-email-form textarea::placeholder,
+.contact .php-email-form select:first-child(1) {
   color: rgba(var(--default-color-rgb), 0.3);
 }
 
