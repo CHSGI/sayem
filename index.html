@@ -79,8 +79,9 @@
     <main id="main">
       <!-- Hero Section - Home Page -->
       <section id="hero" class="hero">
-        <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" />
-
+        <img src="assets/img/hero-bg-1.jpg" alt="" id="hero-bg" data-aos="fade-in" />
+        <button id="prevBtn" class="btn btn-outline-light"><span class="bi bi-chevron-left"></span></button>
+        <button id="nextBtn" class="btn btn-outline-light"><span class="bi bi-chevron-right"></span></button>
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
@@ -95,6 +96,41 @@
           </div>
         </div>
       </section>
+      
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+          const image = document.getElementById("hero-bg");
+          const prevBtn = document.getElementById("prevBtn");
+          const nextBtn = document.getElementById("nextBtn");
+          let count = 1;
+
+          // Function to update image source
+          function updateImage() {
+            image.style.opacity = 0; // Fade out
+            setTimeout(function() {
+              count = count < 2 ? count + 1 : 1;
+              image.src = `assets/img/hero-bg-${count}.jpg`;
+              image.style.opacity = 1; // Fade in
+            }, 500); // Wait for fade out before changing image
+          }
+
+          // Event listeners for previous and next buttons
+          prevBtn.addEventListener("click", function() {
+            count = count > 1 ? count - 1 : 2;
+            updateImage();
+          });
+
+          nextBtn.addEventListener("click", function() {
+            count = count < 2 ? count + 1 : 1;
+            updateImage();
+          });
+
+          // Automatic image change every 3 seconds
+          setInterval(updateImage, 4000);
+        });
+
+          </script>
       <!-- End Hero Section -->
 
       <!-- Clients Section - Home Page -->
