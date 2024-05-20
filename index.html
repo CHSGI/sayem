@@ -109,7 +109,7 @@
           function updateImage() {
             image.style.opacity = 0; // Fade out
             setTimeout(function() {
-              count = count < 2 ? count + 1 : 1;
+              count = count < 6 ? count + 1 : 1;
               image.src = `assets/img/hero-bg-${count}.jpg`;
               image.style.opacity = 1; // Fade in
             }, 500); // Wait for fade out before changing image
@@ -117,12 +117,12 @@
 
           // Event listeners for previous and next buttons
           prevBtn.addEventListener("click", function() {
-            count = count > 1 ? count - 1 : 2;
+            count = count > 1 ? count - 1 : 6;
             updateImage();
           });
 
           nextBtn.addEventListener("click", function() {
-            count = count < 2 ? count + 1 : 1;
+            count = count < 6 ? count + 1 : 1;
             updateImage();
           });
 
